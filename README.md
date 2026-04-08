@@ -6,7 +6,7 @@
 
 ---
 
-## Praltikum 1 (Pembuatan Website Sederhana Menggunakan Framework CodeIgniter 4)
+## Praktikum 1 (Pembuatan Website Sederhana Menggunakan Framework CodeIgniter 4)
 
 ### 1.1 Tujuan Praktikum
 Memahami penggunaan framework CodeIgniter 4
@@ -220,7 +220,7 @@ footer {
 ```
 <img width="1920" height="1080" alt="Cuplikan layar 2026-03-02 143214" src="https://github.com/user-attachments/assets/abae289d-7358-4b4f-b4b8-620d5ddfcce4" />
 
-## Praltikum 2 ( Framework Lanjutan (CRUD) )
+## Praktikum 2 ( Framework Lanjutan (CRUD) )
 
 ### 2.1 Membuat database
 ```
@@ -475,7 +475,7 @@ $routes->group('admin', function($routes) {
 - Pengujian Hapus Data 
 <img width="354" height="126" alt="image" src="https://github.com/user-attachments/assets/41f8a43f-221d-4052-83c9-ef06b4113aea" />
 
-## Praltikum 3 (View Layout dan View Cell)
+## Praktikum 3 (View Layout dan View Cell)
 
 ### 3.1 Tambahkan kolom baru bernama created_at dengan tipe data DATETIME atau TIMESTAMP.
 ```
@@ -624,4 +624,8 @@ Bisa ambil data sendiri (pakai model di dalam cell)
 Intinya:
 View = halaman utama
 View Cell = komponen tambahan (modular)
+
+## Praktikum 4 (Framework Lanjutan (Modul Login))
+
+
 
