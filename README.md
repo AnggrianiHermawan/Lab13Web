@@ -1,4 +1,4 @@
-# Gabungan Praktikum 1, 2, 3 & 4 
+# Gabungan Praktikum 1-10
 
 - **Nama**  : _Anggriani Hermawan_  
 - **NIM**   : _312410175_  
@@ -626,6 +626,34 @@ View = halaman utama
 View Cell = komponen tambahan (modular)
 
 ## Praktikum 4 (Framework Lanjutan (Modul Login))
+### Persiapan Database
+Membuat tabel `user` pada database `lab_ci4` untuk menyimpan data akun administrator.
+<img width="500" height="61" alt="image" src="https://github.com/user-attachments/assets/705f7747-dcce-4005-8856-caf416b8ea6c" />
 
+3. Membuat Model User
+Membuat UserModel.php di dalam folder app/Models/ untuk menangani interaksi data user ke database.
 
+4. Membuat Controller User (Login & Logout)
+Membuat User.php pada folder app/Controllers/. Controller ini berisi fungsi:
+- login(): Memproses validasi email/password dan membuat session jika login berhasil.
+- logout(): Menghapus session dan mengalihkan pengguna kembali ke halaman login.
+
+5. Membuat View Login
+Membuat form login di app/Views/user/login.php yang menggunakan Bootstrap agar tampilan rapi dan responsif.
+
+6. Membuat Filter Auth
+Membuat file Auth.php di dalam folder app/Filters/. Filter ini berfungsi sebagai "penjaga pintu" yang mengecek apakah user sudah memiliki session yang aktif atau belum sebelum diizinkan mengakses halaman admin.
+
+7. Konfigurasi Filter & Routes
+Mendaftarkan filter auth di app/Config/Filters.php dan menerapkannya pada route group admin di app/Config/Routes.php agar sistem keamanan otomatis bekerja.
+
+8. Pengujian Modul Login
+Berikut hasil pengujian sistem autentikasi:
+- Akses Admin: Jika mencoba membuka localhost:8080/admin/artikel tanpa login, sistem akan menolak dan mengalihkan secara otomatis ke halaman login.
+<img width="960" height="540" alt="image" src="https://github.com/user-attachments/assets/8d7c579d-58c7-4077-8a15-26e7d24888a1" />
+
+- Login Berhasil: Setelah memasukkan email dan password yang benar, user akan diarahkan ke halaman Dashboard Artikel.
+<img width="960" height="540" alt="image" src="https://github.com/user-attachments/assets/21194799-0c9e-4b91-9a84-53ad7d5b01cb" />
+
+Logout: Setelah menekan tombol logout, session akan hancur dan user tidak dapat kembali ke halaman admin kecuali login ulang.
 
