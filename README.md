@@ -1,4 +1,4 @@
-# Gabungan Praktikum 1-10
+# Gabungan Praktikum 1-10 (izin sedang melanjutkan pak)
 
 - **Nama**  : _Anggriani Hermawan_  
 - **NIM**   : _312410175_  
