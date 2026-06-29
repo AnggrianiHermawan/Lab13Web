@@ -280,6 +280,40 @@ Menambahkan komponen seperti **artikel terkini** menggunakan Cell, serta menyemp
    - Menambahkan link ke halaman admin artikel dan halaman login.  
 
 ---
+## Modul 11: Frontend API Menggunakan VueJS 3
+Tujuan: Memahami dasar-dasar VueJS dan cara mengkonsumsi RESTful API untuk menampilkan antarmuka yang reaktif.
+Langkah-langkah:
+- Melakukan inisialisasi VueJS 3 dan Axios melalui CDN pada file index.html.
+- Membangun antarmuka utama (UI) yang reaktif menggunakan directives Vue seperti v-for, v-model, dan v-if.
+- Mengimplementasikan fungsi CRUD (Create, Read, Update, Delete) secara asinkron (AJAX) menggunakan library Axios untuk menembak endpoint API dari CodeIgniter 4.
+- Merancang tampilan Modal untuk menampung formulir penambahan dan pengubahan data artikel tanpa perlu memuat ulang halaman.
+
+## Modul 12: VueJS Komponen dan Routing (SPA)
+Tujuan: Membangun Single Page Application (SPA) seutuhnya dengan memecah antarmuka menjadi komponen-komponen modular.
+Langkah-langkah:
+- Memecah blok kode antarmuka menjadi komponen mandiri (seperti Komponen Home dan Artikel) agar lebih terstruktur (reusable).
+- Mengimplementasikan Vue Router untuk mengatur navigasi Client-Side Routing, sehingga perpindahan antar menu terjadi instan tanpa hard-reload dari browser.
+- (Tugas Praktikum): Menambahkan rute baru /about yang memuat komponen profil mahasiswa (berisi Nama, NIM, Kelas, dan Foto) dan menautkannya ke navigasi utama.
+
+## Modul 13: VueJS Autentikasi dan Navigation Guards
+Tujuan: Mengamankan antarmuka Frontend (Client-Side Security) dengan membatasi akses pada rute tertentu.
+Langkah-langkah & Analisis:
+- Membangun modul autentikasi pada API backend CI4 dan form Login pada komponen VueJS. Menggunakan Axios POST untuk mengirim kredensial login ke server secara aman di latar belakang, dan menyimpan status login ke localStorage jika validasi berhasil.
+- Mengimplementasikan Vue Router Navigation Guards (router.beforeEach).
+
+(Tugas Praktikum & Analisis): Fungsi router.beforeEach bertindak sebagai pos pemeriksaan sebelum pengguna memasuki suatu halaman rute. Kami menyematkan metadata requiresAuth: true pada rute /artikel dan /about. Jika status sesi pengguna belum login, Navigation Guards akan secara otomatis memblokir akses dan melempar (redirect) pengguna kembali ke halaman form Login.
+
+
+## Modul 14: Keamanan API, Token & Axios Interceptors
+Tujuan: Mengamankan lalu lintas data (endpoint API) di sisi server (Server-Side Security) dari akses pihak ketiga (misalnya via Postman).
+Langkah-langkah & Analisis Perbandingan:
+- Melakukan modifikasi pada backend CI4 untuk men- generate dan memvalidasi Token Bearer saat user login.
+- Menerapkan CI4 Filters pada endpoint CRUD API untuk memastikan hanya request ber-token valid yang dilayani.
+- Menerapkan Axios Interceptors di sisi VueJS. Fungsi ini berguna untuk menyusupkan secara otomatis parameter header Authorization: Bearer <token> pada setiap request yang keluar, sehingga kita tidak perlu menuliskan header berulang kali di setiap fungsi CRUD.
+
+(Kesimpulan Tugas): Terdapat perbedaan fundamental antara pengaman sisi klien dan server. Vue Router Navigation Guards murni UI/UX Security (hanya mencegah user awam mengklik dan membuka halaman rute melalui browser). Namun, hacker masih bisa mengambil/merusak data langsung melalui URL API via Postman. Di sinilah CI4 Filters + Token (Server-side) bekerja; sistem ini adalah pengaman inti yang akan menolak mutlak (Error 401 Unauthorized) segala bentuk request ilegal, baik dari browser maupun tools API tester yang tidak membawa token valid.
+
+<img width="122" height="38" alt="image" src="https://github.com/user-attachments/assets/2850d48a-6d33-4ec7-ad9d-b81dc33f5e2d" />
 
 ## Penutup
 
@@ -292,4 +326,3 @@ Seluruh praktikum 1 sampai 10 telah diimplementasikan dalam satu project CodeIgn
 - Pagination, search, dan AJAX untuk admin artikel.  
 - Komponen artikel terkini menggunakan Cell. 
 
-Setiap langkah telah didokumentasikan dalam README ini. README akan diperbarui kembali saat praktikum 11–14/15 dikerjakan.
