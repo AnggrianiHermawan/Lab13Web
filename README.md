@@ -317,8 +317,6 @@ Langkah-langkah & Analisis Perbandingan:
 
 ## Penutup
 
-Seluruh praktikum 1 sampai 10 telah diimplementasikan dalam satu project CodeIgniter 4 (`lab11_ci/ci4`) dengan studi kasus blog sederhana:  
-
 - Instalasi dan konfigurasi dasar CI4.  
 - CRUD artikel beserta upload gambar.  
 - Modul login dengan auth filter.  
